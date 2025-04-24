@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://apho2022.in/apho_MBB/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>MBB|Magnetic Blackbox</title>
+   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Materialize -->
+   <link rel="stylesheet" href="./Magnetic Blackbox_files/materialize.min.css">
+   <script src="./Magnetic Blackbox_files/materialize.min.js.download"></script>
+   <link href="./Magnetic Blackbox_files/icon" rel="stylesheet">
+   <!-- Chart JS -->
+   <script src="./Magnetic Blackbox_files/chart.min.js.download"></script>
+   <!-- Our Scripts -->
+   <script src="./Magnetic Blackbox_files/basic.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/user_input.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/Magnet.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/Mobile.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/Magnetometer.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/Pipe.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/Scale.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/graph.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/utils.js.download" defer=""></script>
+   <script src="./Magnetic Blackbox_files/simulation.js.download" defer=""></script>
+   <!-- CSS -->
+   <link rel="stylesheet" href="./Magnetic Blackbox_files/style.css">
+</head>
+
+<body>
+   <div class="text">
+      <div align="right">
+         <!-- <span>Contact:</span> -->
+         &nbsp;
+         <a href="mailto:praveen@hbcse.tifr.res.in" target="_blank">
+            <i class="material-icons" style="position:absolute; top:0px;">email</i>
+         </a>
+      </div>
+      <div class="container" style="width: 100%">
+         <div class="row">
+            <div class="col s12 l8">
+               <canvas style="border-bottom: 5px solid red; cursor: default;" id="canvas" width="691" height="829"></canvas>
+            </div>
+            <div class="col s12 l3 push-l1">
+               <center>
+                  <p>
+                     Intergrid spacing: 1 cm
+                  </p>
+                  <p id="b-display">B<sub>w</sub>: -370.98 μT <br> B<sub>l</sub>: -374.49 μT</p>
+                  <p style="padding: 10px; border: 2px solid red; background: black; display: none;" id="error-display">
+                     <b>Maximum magnetic field exceeded</b>
+                  </p>
+
+                  <span>Rotate mobile:</span>
+                  <input id="mob-angle" type="range" min="0" max="359" step="1" oninput="updateParams(&#39;mob-angle&#39;)" onchange="updateParams(&#39;mob-angle&#39;)">
+
+                  <span>Rotate magnet:</span>
+                  <input id="magnet-angle" type="range" min="0" max="359" step="1" oninput="updateParams(&#39;magnet-angle&#39;)" onchange="updateParams(&#39;magnet-angle&#39;)">
+
+                  <span>Rotate scale:</span>
+                  <input id="scale-angle" type="range" min="0" max="359" step="1" oninput="updateParams(&#39;scale-angle&#39;)" onchange="updateParams(&#39;scale-angle&#39;)">
+
+                  <span>Graph start time, t<sub>i</sub> (s):</span>
+                  <input id="simul-start-time-input" type="number" onchange="updateParams(&#39;simul-start-time-input&#39;)">
+
+                  <span>Graph end time, t<sub>f</sub> (s):</span>
+                  <input id="simul-end-time-input" type="number" onchange="updateParams(&#39;simul-end-time-input&#39;)">
+
+                  <br>
+                  <button class="btn purple darken-4" onclick="measureToggle()" id="measure-button">Start
+                     Measurement</button>
+                  <br> <br>
+                  <button class="btn purple darken-4" onclick="resetGraph()">Reset Graph</button>
+                  <br> <br>
+                  <button class="btn purple darken-4" onclick="dropMagnet()" id="drop-button" disabled="">Drop</button>
+                  <button class="btn purple darken-4" onclick="resetMagnet()">Reset Positions</button>
+                  <br> <br>
+               </center>
+            </div>
+         </div>
+         <center>
+            <button class="btn purple darken-4" onclick="finer()" id="finer-button">2X Finer magnet movement</button>
+            <button class="btn purple darken-4" onclick="coarser()" id="coarser-button">2X Coarser magnet
+               movement</button>
+            <button class="btn purple darken-4" onclick="scaleToggle()" id="scale-button">Show Scale</button>
+         </center>
+         <h2>B<sub>w</sub> &amp; B<sub>l</sub> vs t graph</h2>
+      </div>
+
+      <center>
+         <canvas id="graph-canvas" width="1823" height="911" style="display: block; box-sizing: border-box; height: 728.8px; width: 1458.4px;"></canvas>
+      </center>
+      <br>
+      <hr>
+      <center>
+         <p>
+            This Simulation was developed by Chandan Relekar, Siddhant Mukherjee, Siddharth Tiwary, Charudutt Kadolkar,
+            and
+            Praveen Pathak for Asian Physics Olympaid-2022 which was held at Dehradun, India. The team can be contacted
+            <a href="mailto:praveen@hbcse.tifr.res.in" target="_blank">here</a>.
+            <br> <br>
+            Click <a href="https://github.com/SidM1811/pipe" target="_blank">here</a> to access the repository
+         </p>
+      </center>
+   </div>
+
+
+
+</body></html>
