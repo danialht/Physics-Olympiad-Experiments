@@ -3,6 +3,7 @@
   import MarkdownRenderer from './MarkdownRenderer.svelte';
 
   let selectedExperiment = null;
+  let language = 'en';
 
   const experiments = [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8];
 
@@ -13,10 +14,17 @@
   function clearSelection() {
     selectedExperiment = null;
   }
+
+  function toggleLanguage() {
+    language = language === 'en' ? 'fa' : 'en';
+  }
 </script>
 
 <main>
   <header>
+    <button class="lang-toggle" class:fa={language === 'en'} on:click={toggleLanguage}>
+      {language === 'en' ? 'فارسی' : 'English'}
+    </button>
     <h1>Physics Olympiad Experiments</h1>
     <p>Explore various physics olympiad experiments</p>
   </header>
@@ -26,7 +34,7 @@
       <div class="grid">
         {#each experiments as exp (exp.id)}
           <div class="card" on:click={() => selectExperiment(exp)}>
-            <h3>{exp.name}</h3>
+            <h3 class:fa={language === 'fa'}>{language === 'fa' ? exp.nameFa : exp.name}</h3>
             <p>{exp.description}</p>
           </div>
         {/each}
@@ -41,6 +49,16 @@
 </main>
 
 <style>
+  @font-face {
+    font-family: 'B Nazanin';
+    src: url('./fonts/BNazanin.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  .fa {
+    font-family: 'B Nazanin', Tahoma, sans-serif;
+  }
+
   :global(body) {
     margin: 0;
     padding: 0;
@@ -59,6 +77,25 @@
     text-align: center;
     color: white;
     margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .lang-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   header h1 {
