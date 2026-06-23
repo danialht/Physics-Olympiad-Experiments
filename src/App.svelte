@@ -37,9 +37,11 @@
 
 <main>
   <header>
-    <button class="lang-toggle" class:fa={language === 'en'} on:click={toggleLanguage}>
-      {language === 'en' ? 'فارسی' : 'English'}
-    </button>
+    <div class="header-bar">
+      <button class="lang-toggle" class:fa={language === 'en'} on:click={toggleLanguage}>
+        {language === 'en' ? 'فارسی' : 'English'}
+      </button>
+    </div>
     <h1>Virtual Physics Olympiad Experiments</h1>
   </header>
 
@@ -119,13 +121,15 @@
     margin-bottom: 3rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
-    position: relative;
+  }
+
+  .header-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
   }
 
   .lang-toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
     background: transparent;
     color: var(--color-accent);
     border: 1px solid var(--color-border);
