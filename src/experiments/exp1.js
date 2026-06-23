@@ -2,8 +2,8 @@ import content from './exp1.md?raw';
 
 export const exp1 = {
   id: 1,
-  name: "Experiment 1",
-  nameFa: "آزمایش 1",
+  name: "Virtual Experiment 1: Geometrical and Wave Optics",
+  nameFa: "آزمایش مجازی 1: اپتیک هندسی و موج",
   description: "Python-based physics experiment",
   file: "exp1.py",
   content

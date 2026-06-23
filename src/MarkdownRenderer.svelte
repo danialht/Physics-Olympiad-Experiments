@@ -59,27 +59,33 @@
   :global(.markdown-content) {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--color-text);
   }
 
   :global(.markdown-content h1) {
-    font-size: 2.5rem;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-weight: normal;
+    font-size: 2.25rem;
     margin: 1.5rem 0 1rem;
-    color: #667eea;
-    border-bottom: 3px solid #667eea;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
   }
 
   :global(.markdown-content h2) {
-    font-size: 2rem;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-weight: normal;
+    font-size: 1.75rem;
     margin: 1.5rem 0 0.8rem;
-    color: #764ba2;
+    color: var(--color-accent);
   }
 
   :global(.markdown-content h3) {
-    font-size: 1.5rem;
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    font-weight: normal;
+    font-size: 1.4rem;
     margin: 1.2rem 0 0.6rem;
-    color: #555;
+    color: var(--color-accent-soft);
   }
 
   :global(.markdown-content p) {
@@ -98,12 +104,37 @@
   }
 
   :global(.markdown-content strong) {
-    color: #667eea;
+    color: var(--color-accent);
     font-weight: 600;
   }
 
+  :global(.markdown-content a) {
+    color: var(--color-accent-soft);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border);
+    text-underline-offset: 2px;
+  }
+
+  :global(.markdown-content a:hover) {
+    color: var(--color-accent);
+    text-decoration-color: currentColor;
+  }
+
+  :global(.markdown-content blockquote) {
+    margin: 1.2rem 0;
+    padding: 0.6rem 1.2rem;
+    border-left: 3px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-muted);
+  }
+
+  :global(.markdown-content blockquote p) {
+    margin: 0.3rem 0;
+  }
+
   :global(.markdown-content code) {
-    background: #f5f5f5;
+    background: var(--color-bg);
+    color: var(--color-text);
     padding: 0.2rem 0.5rem;
     border-radius: 3px;
     font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
@@ -122,6 +153,7 @@
     display: block;
     margin: 1.5rem auto;
     max-width: 100%;
+    border: 1px solid var(--color-border);
   }
 
   :global(.markdown-content table) {
@@ -132,13 +164,13 @@
 
   :global(.markdown-content th),
   :global(.markdown-content td) {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     padding: 0.9rem 1.2rem;
     text-align: center;
   }
 
   :global(.markdown-content th) {
-    background: #f5f5f5;
+    background: var(--color-bg);
     font-weight: 600;
   }
 </style>
