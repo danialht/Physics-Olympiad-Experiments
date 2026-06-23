@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import { exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8 } from './experiments/index.js';
   import MarkdownRenderer from './MarkdownRenderer.svelte';
 
@@ -7,12 +8,27 @@
 
   const experiments = [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8];
 
+  function experimentFromHash() {
+    const slug = window.location.hash.slice(1);
+    return experiments.find((exp) => `exp${exp.id}` === slug) ?? null;
+  }
+
+  function syncFromHash() {
+    selectedExperiment = experimentFromHash();
+  }
+
+  onMount(() => {
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
+  });
+
   function selectExperiment(exp) {
-    selectedExperiment = exp;
+    window.location.hash = `exp${exp.id}`;
   }
 
   function clearSelection() {
-    selectedExperiment = null;
+    window.location.hash = '';
   }
 
   function toggleLanguage() {

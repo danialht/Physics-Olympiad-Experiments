@@ -39,8 +39,14 @@
     return html;
   }
 
+  function rewriteAssetPaths(html) {
+    const base = import.meta.env.BASE_URL;
+    return html.replace(/(src|href)="\/(?!\/)/g, `$1="${base}`);
+  }
+
   $: if (content) {
     let html = marked(content);
+    html = rewriteAssetPaths(html);
     htmlContent = renderMath(html);
   }
 </script>
@@ -110,5 +116,29 @@
   :global(.markdown-content .katex-display) {
     margin: 1.5rem 0;
     overflow-x: auto;
+  }
+
+  :global(.markdown-content img) {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+  }
+
+  :global(.markdown-content table) {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+  }
+
+  :global(.markdown-content th),
+  :global(.markdown-content td) {
+    border: 1px solid #ccc;
+    padding: 0.9rem 1.2rem;
+    text-align: center;
+  }
+
+  :global(.markdown-content th) {
+    background: #f5f5f5;
+    font-weight: 600;
   }
 </style>
