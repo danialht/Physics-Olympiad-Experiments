@@ -55,7 +55,7 @@
         {#if language === 'fa'}
           I don't have Persian keyboard. I'll write this later.
         {:else}
-        Every year the Internationl Physics Olympiad (IPhO) has two section, theory and experiment. The theory secion, of course, has theory problems and the experimental section usually includes setting up some apparatus, some theoretical insight and measurements and data analysis. IPhO 2022, was held online for most of the countries, due to some change of the plans in the organization there was no time for sending real apparatus to studnets, and previously because of Covid there had already some trend of "Virtual Experiment".
+        Every year the Internationl Physics Olympiad (IPhO) has two section, theory and experiment. The theory secion, of course, has theory problems and the experimental section usually includes setting up some apparatus, some theoretical insight and measurements and data analysis. IPhO 2022, was held online for most of the countries, due to some change of the plans in the organization there was no time for sending real apparatus to students, and previously because of Covid there had already some trend of "Virtual Experiment".
         {/if}
       </p>
       <ul class="experiment-list">
