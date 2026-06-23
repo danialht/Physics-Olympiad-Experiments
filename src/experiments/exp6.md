@@ -1,25 +1,25 @@
-# Experiment 6
+# Experiment 6: Magnetic Field of an Orbiting Charge
 
-## Advanced C++ Computational Physics
-High-performance computing for physics simulations.
+In this virtual experiment, you have a small device that can measure the magnetic field at a chosen location for a limited time of about 10 seconds. A charge $Q$ moves at constant speed $v$ around an ellipse whose axes are parallel to the coordinate axes.
 
-## Electromagnetism
-Maxwell's equations describe electromagnetic phenomena:
+> *Note:* In the program's display font, the symbol for speed can look like the digit "7" — this is $v$, not the number 7.
 
-$$\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}$$
-$$\nabla \cdot \mathbf{B} = 0$$
-$$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$$
-$$\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}$$
+Find the following values:
 
-## Simulation Details
-- Domain size: 1m × 1m
-- Grid points: 256 × 256
-- Time duration: 10 microseconds
-- Solver: FDTD (Finite-Difference Time-Domain)
+**(a)** The initial position from which $Q$ started moving: $(X_{0}, Y_{0})$
 
-## Performance Metrics
-- Computation time: ~5 minutes
-- Memory usage: 512 MB
+**(b)** Velocity $v$
 
-## Visualization
-Field distributions at different time steps.
+**(c)** Semi-major axis ($a$)
+
+**(d)** Semi-minor axis ($b$)
+
+**(e)** Coordinates of the center of the ellipse: $(X_{c}, Y_{c})$
+
+**(f)** The value of $Q$
+
+### Downloads
+
+- [Program (exp6.exe)](/experiments/exp6/exp6.exe)
+- [Source code (exp6.cpp)](/experiments/exp6/exp6.cpp)
+
