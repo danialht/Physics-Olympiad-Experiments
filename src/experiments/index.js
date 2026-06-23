@@ -6,3 +6,4 @@ export { exp5 } from './exp5.js';
 export { exp6 } from './exp6.js';
 export { exp7 } from './exp7.js';
 export { exp8 } from './exp8.js';
+export { exp9 } from './exp9.js';

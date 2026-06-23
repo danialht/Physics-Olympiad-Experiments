@@ -1,12 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-  import { exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8 } from './experiments/index.js';
+  import { exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8, exp9 } from './experiments/index.js';
   import MarkdownRenderer from './MarkdownRenderer.svelte';
 
   let selectedExperiment = null;
+  let notFound = false;
   let language = 'en';
 
-  const experiments = [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8];
+  const experiments = [exp1, exp2, exp3, exp4, exp5, exp6, exp7, exp8, exp9];
 
   function experimentFromHash() {
     const slug = window.location.hash.slice(1);
@@ -14,7 +15,9 @@
   }
 
   function syncFromHash() {
+    const slug = window.location.hash.slice(1);
     selectedExperiment = experimentFromHash();
+    notFound = slug.length > 0 && !selectedExperiment;
   }
 
   onMount(() => {
@@ -46,7 +49,13 @@
   </header>
 
   <div class="container">
-    {#if !selectedExperiment}
+    {#if notFound}
+      <div class="not-found">
+        <h2>404</h2>
+        <p>Page not found.</p>
+        <button on:click={clearSelection}>← Back to experiments</button>
+      </div>
+    {:else if !selectedExperiment}
       <div class="grid">
         {#each experiments as exp (exp.id)}
           <div class="card" on:click={() => selectExperiment(exp)}>
@@ -195,5 +204,41 @@
   .detail p {
     color: #666;
     line-height: 1.6;
+  }
+
+  .not-found {
+    background: white;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .not-found h2 {
+    font-size: 3rem;
+    margin: 0;
+    color: #667eea;
+  }
+
+  .not-found p {
+    color: #666;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .not-found button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+
+  .not-found button:hover {
+    background: #764ba2;
   }
 </style>
