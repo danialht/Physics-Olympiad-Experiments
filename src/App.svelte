@@ -311,4 +311,42 @@
     background: var(--color-accent);
     color: var(--color-surface);
   }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 1rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.9rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    .intro {
+      font-size: 0.95rem;
+    }
+
+    .experiment-list a {
+      font-size: 1rem;
+    }
+
+    .detail {
+      padding: 1.25rem;
+    }
+
+    .not-found {
+      padding: 2rem 1.25rem;
+    }
+
+    .not-found h2 {
+      font-size: 2rem;
+    }
+  }
 </style>

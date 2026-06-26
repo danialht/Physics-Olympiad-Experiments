@@ -177,4 +177,27 @@
     background: var(--color-bg);
     font-weight: 600;
   }
+
+  @media (max-width: 640px) {
+    :global(.markdown-content) {
+      font-size: 0.95rem;
+    }
+
+    :global(.markdown-content h1) {
+      font-size: 1.6rem;
+    }
+
+    :global(.markdown-content h2) {
+      font-size: 1.35rem;
+    }
+
+    :global(.markdown-content h3) {
+      font-size: 1.15rem;
+    }
+
+    :global(.markdown-content th),
+    :global(.markdown-content td) {
+      padding: 0.5rem 0.6rem;
+    }
+  }
 </style>
