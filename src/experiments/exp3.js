@@ -1,4 +1,5 @@
 import content from './exp3.md?raw';
+import contentFa from './exp3.fa.md?raw';
 
 export const exp3 = {
   id: 3,
@@ -6,5 +7,6 @@ export const exp3 = {
   nameFa: "آزمایش مجازی 3: سقوط",
   description: "C++ based experiment with guide",
   file: "exp3",
-  content
+  content,
+  contentFa
 };

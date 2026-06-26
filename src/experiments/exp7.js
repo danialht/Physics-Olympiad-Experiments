@@ -1,4 +1,5 @@
 import content from './exp7.md?raw';
+import contentFa from './exp7.fa.md?raw';
 
 export const exp7 = {
   id: 7,
@@ -6,5 +7,6 @@ export const exp7 = {
   nameFa: "آزمایش مجازی 7: جعبه سیاه مغناطیسی",
   description: "Interactive magnetic experiment",
   file: "exp7",
-  content
+  content,
+  contentFa
 };

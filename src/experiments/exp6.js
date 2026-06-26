@@ -1,4 +1,5 @@
 import content from './exp6.md?raw';
+import contentFa from './exp6.fa.md?raw';
 
 export const exp6 = {
   id: 6,
@@ -6,5 +7,6 @@ export const exp6 = {
   nameFa: "آزمایش مجازی 6: میدان مغناطیسی بار در حال چرخش",
   description: "C++ based experiment",
   file: "exp6.cpp",
-  content
+  content,
+  contentFa
 };

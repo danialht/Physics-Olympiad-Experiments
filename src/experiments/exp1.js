@@ -1,4 +1,5 @@
 import content from './exp1.md?raw';
+import contentFa from './exp1.fa.md?raw';
 
 export const exp1 = {
   id: 1,
@@ -6,5 +7,6 @@ export const exp1 = {
   nameFa: "آزمایش مجازی 1: اپتیک هندسی و موج",
   description: "Python-based physics experiment",
   file: "exp1.py",
-  content
+  content,
+  contentFa
 };

@@ -142,11 +142,15 @@
 
   :global(.markdown-content .katex) {
     font-size: 1.1em;
+    direction: ltr;
+    unicode-bidi: isolate;
   }
 
   :global(.markdown-content .katex-display) {
     margin: 1.5rem 0;
     overflow-x: auto;
+    direction: ltr;
+    unicode-bidi: isolate;
   }
 
   :global(.markdown-content img) {

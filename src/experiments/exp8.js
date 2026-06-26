@@ -1,4 +1,5 @@
 import content from './exp8.md?raw';
+import contentFa from './exp8.fa.md?raw';
 
 export const exp8 = {
   id: 8,
@@ -6,5 +7,6 @@ export const exp8 = {
   nameFa: "آزمایش مجازی 8: پتانسیل یک دیسک باردار",
   description: "Python-based experiment",
   file: "Main.py",
-  content
+  content,
+  contentFa
 };
