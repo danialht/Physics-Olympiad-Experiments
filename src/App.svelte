@@ -14,10 +14,22 @@
     return experiments.find((exp) => `exp${exp.id}` === slug) ?? null;
   }
 
+  function trackPageView() {
+    if (typeof window.gtag !== 'function') return;
+    const page_path = window.location.pathname + window.location.search + window.location.hash;
+    const page_title = selectedExperiment
+      ? selectedExperiment.name
+      : notFound
+        ? '404 Not Found'
+        : 'Virtual Physics Olympiad Experiments';
+    window.gtag('event', 'page_view', { page_path, page_title });
+  }
+
   function syncFromHash() {
     const slug = window.location.hash.slice(1);
     selectedExperiment = experimentFromHash();
     notFound = slug.length > 0 && !selectedExperiment;
+    trackPageView();
   }
 
   function languageFromQuery() {
