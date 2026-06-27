@@ -61,3 +61,8 @@ The program screen is as follows.
 **FAN ON/OFF Button**: The FAN ON/OFF button brings a fan onto the screen that you can move with your mouse. 
 
 **Final Notes:** The precision of the angle you provide to the program is 1 degree, and the length of the string and the radius are 1 centimeter. Good luck.
+
+### Downloads
+
+- [Program (Simulation.zip)](/experiments/exp2/Simulation.zip)
+- [Solution (exp2.xlsx)](/experiments/exp2/exp2.xlsx)
