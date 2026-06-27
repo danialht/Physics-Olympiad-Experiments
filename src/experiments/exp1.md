@@ -38,3 +38,9 @@ Section (C)
 
 According to Cauchy's equation $n(\lambda) = A + \frac{B}{\lambda^2}$:
 Determine the validity of the relationship by plotting a graph and performing a regression. If the relationship holds, find $A$ and $B$.
+
+### Downloads
+
+- [Program (exp1.exe)](/experiments/exp1/exp1.exe)
+- [Source code (exp1.py)](/experiments/exp1/exp1.py)
+- [Solution (exp 1.xlsx)](/experiments/exp1/exp%201.xlsx)
